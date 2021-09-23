@@ -48,6 +48,13 @@ function getProducts() {
   });
 }
 
+function getProduct(id){
+  return fetch(`https://api.mercadolibre.com/items/${id}`, {
+    method: 'GET',
+    redirect: 'follow',
+  });
+}
+
 window.onload = () => {
   getProducts()
   .then((response) => response.json())
