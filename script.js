@@ -42,7 +42,7 @@ function cartItemClickListener(event) {
   const ls = JSON.parse(localStorage.getItem('carrinho') || '[]');
   const total = ls.reduce((sum, obj) => obj.salePrice + sum, 0);
   document.querySelector('.total-price')
-  .textContent = `Preço total: $${(total ? total.toFixed(2) : 0)}`;
+  .textContent = total;
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
@@ -76,7 +76,7 @@ const cart = {
     const ls = JSON.parse(localStorage.getItem('carrinho') || '[]');
     const total = ls.reduce((sum, obj) => obj.salePrice + sum, 0);
     document.querySelector('.total-price')
-    .textContent = `Preço total: $${(total ? total.toFixed(2) : 0)}`;
+    .textContent = total;
   },
   fill: () => {
     const ls = JSON.parse(localStorage.getItem('carrinho') || '[]');
